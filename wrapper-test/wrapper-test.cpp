@@ -1,18 +1,18 @@
 // wrapper-test.cpp: Hauptprojektdatei.
 
 #include "stdafx.h"
-//#include "..\LuaWrapper\LuaWrapper.h"
 
 using namespace System;
+using namespace std;
 using namespace LuaWrapper;
 
 int main(array<System::String ^> ^args)
 {
 	Lua lua;
-	lua.openlibs();
+	// L‰d alle Lua-Standardbibliotheken auﬂer Debug
+	lua.loadDefaultLibs(Lua::ALL ^ Lua::DEBUG);
 	lua.dofile("hallo.lua");
-	lua.close();
 
-    std::system("pause");
+    system("pause");
     return 0;
 }
